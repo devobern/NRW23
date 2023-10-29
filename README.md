@@ -45,7 +45,7 @@ NRW23/
 
 1. **Clone the Repository**
    ```bash
-   git clone [https://github.com/devobern/NRW23/tree/main]
+   git clone https://github.com/devobern/NRW23/tree/main
    ```
 
 2. **Navigate to Directory**
@@ -77,7 +77,7 @@ NRW23/
 Access the hosted application [here](https://devobern.pythonanywhere.com/).
 
 ## Disclaimer
-This application was developed within 2 hours with assistance from OpenAI's GPT-4. Consequently, there might be occasional issues or aspects that need refinement. The primary motivation for this tool's development was the lack of a simple platform to view the votes received by individual candidates. Feedback and suggestions are always welcome.
+This application is an ongoing project and serves as a bit of a playground for me. It was developed with the primary motivation to provide a simple platform to view the votes received by individual candidates. There might be occasional issues or aspects that need refinement. Feedback and suggestions are always welcome.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
