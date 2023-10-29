@@ -14,13 +14,11 @@
 - [Contact](#contact)
 
 ## Introduction
-This repository contains a Flask application designed for users to search for candidates who participated in the 2023 Nationalrat elections. It primarily showcases detailed information about a candidate, emphasizing the number of votes they received.
+This repository contains a Flask application designed for users to search for candidates who participated in the 2023 Nationalrat elections (Switzerland). It primarily showcases detailed information about a candidate, emphasizing the number of votes they received.
 
 ## Repository Structure
 ```
 NRW23/
-│
-├── env/                       # Virtual environment directory
 │
 ├── files/
 │   └── NRW2023-kandidierende.zip  # Data containing candidate information
@@ -29,14 +27,20 @@ NRW23/
 │   └── styles.css            # CSS file for the web application styling
 │
 ├── templates/
+│   ├── detail.html           # Detail page template for a specific candidate
 │   ├── index.html            # Main page template for search feature
-│   └── result.html           # Results page displaying candidate details
+│   └── results.html          # Results page displaying candidates
 │
 ├── .gitignore                # Patterns of files/directories to ignore in git
 │
+├── LICENSE                   # License file
+│
 ├── NRW23_candidate_search_app.py  # Main Flask app script
 │
+├── README.md                 # README documentation
+│
 └── requirements.txt          # List of required Python packages for the app
+
 ```
 
 ## Getting Started
