@@ -63,3 +63,8 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+.github-badge {
+    margin-top: 20px;
+    text-align: center; /* Centers the badge */
+}

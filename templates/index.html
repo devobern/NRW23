@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
     <title>Kandidat:in Suchen</title>
 </head>
+
 <body>
     <h1>Nationalratswahlen 2023: Kandidat:in Suche</h1>
-    <p>Gib den Vor- und Nachnamen einer Person ein, die für den Nationalrat kandidiert hat, und dir werden die Anzahl der erhaltenen Stimmen sowie zusätzliche Details zur Person und ihrer Kandidatur angezeigt. Bitte beachte, dass die Ergebnisse nur für die Wahlen von 2023 gelten.</p>
+    <p>Gib den Vor- und Nachnamen einer Person ein, die für den Nationalrat kandidiert hat, und dir werden die Anzahl
+        der erhaltenen Stimmen sowie zusätzliche Details zur Person und ihrer Kandidatur angezeigt. Bitte beachte, dass
+        die Ergebnisse nur für die Wahlen von 2023 gelten.</p>
     <form action="/search" method="post">
         Vorname*: <input type="text" name="first_name" required><br>
         Nachname*: <input type="text" name="last_name" required><br>
         <input type="submit" value="Suchen">
     </form>
 
+    <!-- GitHub Badge -->
+    <div class="github-badge">
+        <a href="https://github.com/devobern/NRW23" target="_blank">
+            <img src="https://img.shields.io/badge/GitHub-View%20on%20GitHub-blue?style=flat-square&logo=github"
+                alt="View on GitHub">
+        </a>
+    </div>
+
     <h3>Hinweis</h3>
-    <p>Diese App wurde innerhalb von nur 2 Stunden mit der Unterstützung eines OpenAI-Tools zum Spass erstellt. Daher kann es möglicherweise noch Fehler und unschöne Darstellungen geben. Der Hauptgrund für die Erstellung dieser App war, dass ich sonst keine Möglichkeit gefunden habe, die Anzahl Stimmen, die ein Kandidat oder eine Kandidatin erhalten hat, einzusehen. Wenn Sie Fragen, Anmerkungen oder Vorschläge zur Verbesserung haben, schreiben Sie mir ein Mail (<a href="mailto:nationalratswahlen23_app.px0na@passmail.net">nationalratswahlen23_app.px0na@passmail.net</a>).</p>
+    <p>Diese App wurde innerhalb von nur 2 Stunden mit der Unterstützung eines OpenAI-Tools zum Spass erstellt. Daher
+        kann es möglicherweise noch Fehler und unschöne Darstellungen geben. Der Hauptgrund für die Erstellung dieser
+        App war, dass ich sonst keine Möglichkeit gefunden habe, die Anzahl Stimmen, die ein Kandidat oder eine
+        Kandidatin erhalten hat, einzusehen. Wenn Sie Fragen, Anmerkungen oder Vorschläge zur Verbesserung haben,
+        schreiben Sie mir ein Mail (<a
+            href="mailto:nationalratswahlen23_app.px0na@passmail.net">nationalratswahlen23_app.px0na@passmail.net</a>).
+    </p>
 
     <!-- Quellenangabe -->
     <h3>Quellenangabe</h3>
     <p>
         Autor:in: Bundesamt für Statistik BFS <br>
         Titel: NR - Kandidierende <br>
-        <a href="https://opendata.swiss/de/dataset/eidg-wahlen-2023/resource/1cd03e48-bb87-4d89-825b-84ccd32a0b83" target="_blank">Link zum Datensatz</a>
+        <a href="https://opendata.swiss/de/dataset/eidg-wahlen-2023/resource/1cd03e48-bb87-4d89-825b-84ccd32a0b83"
+            target="_blank">Link zum Datensatz</a>
     </p>
 </body>
+
 </html>
