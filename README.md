@@ -1,7 +1,7 @@
 # NRW23 Candidate Search App
 
 ![Status](https://img.shields.io/badge/status-active-success.svg)
-![Python Version](https://img.shields.io/badge/python-3.8-blue.svg)
+![Python Version](https://img.shields.io/badge/python-3.11.4-blue.svg)
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -102,4 +102,3 @@ Titel: NR - Kandidierende
 
 ## Contact
 For inquiries or suggestions, please reach out via [email](mailto:nationalratswahlen23_app.px0na@passmail.net).
-```
