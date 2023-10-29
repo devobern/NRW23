@@ -14,7 +14,7 @@
     <ul>
         {% for person in results %}
         <li class="result-item">
-            <a href="/detail/{{ person.kanton_nummer }}_{{ person.liste_nummer_kanton }}_{{ person.kandidat_nummer }}">
+            <a href="/detail/{{ person.kanton_nummer }}/{{ person.liste_nummer_kanton }}/{{ person.kandidat_nummer }}">
                 {{ person.vorname }} {{ person.name }}, Geburtsjahr: {{ person.geburtsjahr }}, Kanton: {{
                 person.kanton_bezeichnung }}, Wohnort: {{ person.wohnort }}, Liste: {{ person.liste_bezeichnung }},
                 Stimmen: {{ person.stimmen_kandidat }}
