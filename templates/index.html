@@ -53,6 +53,12 @@
         document.querySelector('form').addEventListener('submit', function (e) {
             document.getElementById('loadingSpinner').style.display = 'inline-block';
         });
+
+        window.addEventListener('pageshow', function (event) {
+            if (event.persisted) { // true, wenn die Seite aus dem Cache geladen wurde
+                document.getElementById('loadingSpinner').style.display = 'none';
+            }
+        });
     </script>
 </body>
 
