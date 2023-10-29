@@ -111,3 +111,14 @@ li {
 .result-item:hover {
     background-color: #dcdcdc;
 }
+
+/* Für Bildschirme mit einer maximalen Breite von 767px (typischerweise Smartphones) */
+@media only screen and (max-width: 767px) {
+    .result-item {
+        height: auto; /* Erlaubt dem Element, sich basierend auf dem Inhalt anzupassen */
+    }
+
+    .result-item a {
+        padding: 10px 5px; /* Reduzieren Sie das Padding ein wenig für kleine Bildschirme */
+    }
+}
