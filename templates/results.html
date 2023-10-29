@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!-- Linking the CSS file -->
+    <title>Suchergebnisse</title>
+</head>
+
+<body>
+    <h1>Suchergebnisse</h1>
+
+    <ul>
+        {% for person in results %}
+        <li class="result-item">
+            <a href="/detail/{{ person.kanton_nummer }}_{{ person.liste_nummer_kanton }}_{{ person.kandidat_nummer }}">
+                {{ person.vorname }} {{ person.name }}, Geburtsjahr: {{ person.geburtsjahr }}, Kanton: {{
+                person.kanton_bezeichnung }}, Wohnort: {{ person.wohnort }}, Liste: {{ person.liste_bezeichnung }},
+                Stimmen: {{ person.stimmen_kandidat }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>    
+
+    <a href="/">Zurück zur Suche</a>
+
+    <!-- Quellenangabe -->
+    <h3>Quellenangabe</h3>
+    <p>
+        Autor:in: Bundesamt für Statistik BFS <br>
+        Titel: NR - Kandidierende <br>
+        <a href="https://opendata.swiss/de/dataset/eidg-wahlen-2023/resource/1cd03e48-bb87-4d89-825b-84ccd32a0b83"
+            target="_blank">Link zum Datensatz</a>
+    </p>
+</body>
+
+</html>
