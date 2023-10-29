@@ -10,6 +10,8 @@ app = Flask(__name__)
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ZIP_FILE_PATH = os.path.join(BASE_DIR, 'files', 'NRW2023-kandidierende.zip')
 
+JSON_FILENAME = "NRW2023-kandidierende.json"
+
 def get_data_from_zip():
     with zipfile.ZipFile(ZIP_FILE_PATH, 'r') as z:
         with z.open(JSON_FILENAME) as f:
