@@ -2,11 +2,13 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for
 import zipfile
 import json
 import traceback
+import os
 
 app = Flask(__name__)
 
-ZIP_FILE_PATH = "./files/NRW2023-kandidierende.zip"
-JSON_FILENAME = "NRW2023-kandidierende.json"
+# Adjusted path
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+ZIP_FILE_PATH = os.path.join(BASE_DIR, 'files', 'NRW2023-kandidierende.zip')
 
 def get_data_from_zip():
     with zipfile.ZipFile(ZIP_FILE_PATH, 'r') as z:
