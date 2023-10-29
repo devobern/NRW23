@@ -89,7 +89,7 @@ The data used in this repository is sourced from the **Bundesamt für Statistik 
 - **Dataset Name**: NR - Kandidierende
 - **Publication Date**: 8. August 2023
 - **Format**: JSON
-- **Access URL**: [Link to Dataset](https://ogd-stadtveinofp-app.ch/v4/ogd-sc/1-7-02-NRW2023-kandidierende.json)
+- **Access URL**: [Link to Dataset](https://opendata.swiss/de/dataset/eidg-wahlen-2023/resource/1cd03e48-bb87-4d89-825b-84ccd32a0b83)
 
 ### License for Dataset
 
