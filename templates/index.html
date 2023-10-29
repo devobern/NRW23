@@ -29,10 +29,14 @@
         Liste: <input type="text" name="liste"><br>
         Wohnort: <input type="text" name="wohnort"><br>
         <input type="submit" value="Suchen">
+        <div class="spinner" id="loadingSpinner"></div>
     </form>
 
     <h3>Hinweis</h3>
-    <p>Diese App entstand, weil ich herausfinden wollte, wie viele Stimmen ein Kandidat erhalten hat. Bisher habe ich keine einfache Möglichkeit dafür gefunden. Wenn du einen Dienst kennst, der diese Info bereitstellt, lass es mich wissen! Diese App ist nicht perfekt, und das ist okay. Feedback und Verbesserungsvorschläge? Immer her damit. Schick mir einfach eine <a href="mailto:nationalratswahlen23_app.px0na@passmail.net">Mail</a>.</p>
+    <p>Diese App entstand, weil ich herausfinden wollte, wie viele Stimmen ein Kandidat erhalten hat. Bisher habe ich
+        keine einfache Möglichkeit dafür gefunden. Wenn du einen Dienst kennst, der diese Info bereitstellt, lass es
+        mich wissen! Diese App ist nicht perfekt, und das ist okay. Feedback und Verbesserungsvorschläge? Immer her
+        damit. Schick mir einfach eine <a href="mailto:nationalratswahlen23_app.px0na@passmail.net">Mail</a>.</p>
 
     <!-- Quellenangabe -->
     <h3>Quellenangabe</h3>
@@ -42,6 +46,11 @@
         <a href="https://opendata.swiss/de/dataset/eidg-wahlen-2023/resource/1cd03e48-bb87-4d89-825b-84ccd32a0b83"
             target="_blank">Link zum Datensatz</a>
     </p>
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+            document.getElementById('loadingSpinner').style.display = 'inline-block';
+        });
+    </script>
 </body>
 
 </html>
