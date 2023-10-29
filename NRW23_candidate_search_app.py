@@ -66,5 +66,10 @@ def detail(kanton_nummer, liste_nummer_kanton, kandidat_nummer):
     
     return "Person nicht gefunden", 404
 
+@app.route('/privacy-policy')
+def privacy_policy():
+    return render_template('privacy-policy.html')
+
+
 if __name__ == '__main__':
     app.run()
