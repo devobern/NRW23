@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Details von {{ person.vorname }} {{ person.name }}</title>
+</head>
+
+<body>
+    <h1>{{ person.vorname }} {{ person.name }}</h1>
+
+    <h2 id="election-status">Status: <span class="{{ 'elected' if person.flag_gewaehlt else 'not-elected' }}">{{
+            "Gewählt" if person.flag_gewaehlt else "Nicht Gewählt" }}</span></h2>
+
+    <h2>Erhaltene Stimmen: {{ person.stimmen_kandidat }}</h2>
+
+
+    <table>
+        <tr>
+            <td>Kanton</td>
+            <td>{{ person.kanton_bezeichnung }}</td>
+        </tr>
+        <tr>
+            <td>Listen Bezeichnung</td>
+            <td>{{ person.liste_bezeichnung }}</td>
+        </tr>
+        <tr>
+            <td>Kandidat Nummer</td>
+            <td>{{ person.kandidat_nummer }}</td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>{{ person.name }}</td>
+        </tr>
+        <tr>
+            <td>Vorname</td>
+            <td>{{ person.vorname }}</td>
+        </tr>
+        <tr>
+            <td>Geschlecht</td>
+            <td>{{ person.geschlecht }}</td>
+        </tr>
+        <tr>
+            <td>Geburtsdatum</td>
+            <td>{{ person.geburtsdatum }}</td>
+        </tr>
+        <tr>
+            <td>Wohnort</td>
+            <td>{{ person.wohnort }}</td>
+        </tr>
+        <tr>
+            <td>Beruf</td>
+            <td>{{ person.beruf }}</td>
+        </tr>
+        <tr>
+            <td>Erhaltene Stimmen</td>
+            <td>{{ person.stimmen_kandidat }}</td>
+        </tr>
+        <tr>
+            <td>Gewählt</td>
+            <td>{{ "Ja" if person.flag_gewaehlt else "Nein" }}</td>
+        </tr>
+    </table>
+
+    <a href="/">Zurück zur Suche</a> | <a href="javascript:window.history.back()">Zurück zu den Ergebnissen</a>
+
+    <!-- Quellenangabe -->
+    <h3>Quellenangabe</h3>
+    <p>
+        Autor:in: Bundesamt für Statistik BFS <br>
+        Titel: NR - Kandidierende <br>
+        <a href="https://opendata.swiss/de/dataset/eidg-wahlen-2023/resource/1cd03e48-bb87-4d89-825b-84ccd32a0b83"
+            target="_blank">Link zum Datensatz</a>
+    </p>
+</body>
+
+</html>
