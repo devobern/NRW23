@@ -23,6 +23,47 @@
         haben. Du kannst nach Vorname, Nachname, Kanton, Partei und Wohnort suchen. Die Ergebnisse zeigen dir die Anzahl
         der erhaltenen Stimmen sowie zusätzliche Details zur Person und ihrer Kandidatur. Bitte beachte, dass die Daten
         nur für die Wahlen von 2023 gelten.</p>
+
+    <div class="header-with-tooltip">
+        <h2>Suche nach Kandidat </h2>
+        <div class="tooltip-container">
+            <span class="tooltip-icon">?</span>
+            <div class="tooltip-content">
+                <ul>
+                    <li>Gib den Vor- oder Nachnamen eines Kandidaten ein. Passende Kandidaten werden dir daraufhin unten
+                        aufgelistet.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <input type="text" id="kandidatSearch" placeholder="Name des Kandidaten">
+    <ul class="dropdown-list" id="kandidatDropdown">
+        <!--Is dynamicly loaded via JavaScript-->
+    </ul>
+
+    <div class="divider"></div>
+
+    <div class="header-with-tooltip">
+        <h2>Detailierte Suche</h2>
+        <div class="tooltip-container">
+            <span class="tooltip-icon">?</span>
+            <div class="tooltip-content">
+                <ul>
+                    <li><strong>Vorname:</strong> Gib einen Teil oder den gesamten Vornamen ein. Zum Beispiel findet die
+                        Suche nach "Tho" den Namen "Thomas".</li>
+                    <li><strong>Nachname:</strong> Ähnlich kannst du einen Teil oder den gesamten Nachnamen eingeben.
+                        Die
+                        Suche nach "Muster" findet "Muster-Müller".</li>
+                    <li><strong>Kanton:</strong> Gib einen Teil oder den gesamten Kantonsnamen ein. Zum Beispiel findet
+                        die
+                        Eingabe von "Zür" den Kanton "Zürich".</li>
+                    <li><strong>Liste:</strong> Gib einen Teil oder den gesamten Namen der Liste ein.</li>
+                    <li><strong>Wohnort:</strong> Gib einen Teil oder den gesamten Wohnortnamen ein.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
     <form action="/search" method="post">
         Vorname: <input type="text" name="first_name"><br>
         Nachname: <input type="text" name="last_name"><br>
