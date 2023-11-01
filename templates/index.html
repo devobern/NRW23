@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
     <title>Kandidat:in Suchen</title>
 </head>
 
@@ -49,17 +50,6 @@
     <h3>Datenschutzerklärung</h3>
     <a href="/privacy-policy">Unsere Datenschutzerklärung</a>
 
-    <script>
-        document.querySelector('form').addEventListener('submit', function (e) {
-            document.getElementById('loadingSpinner').style.display = 'inline-block';
-        });
-
-        window.addEventListener('pageshow', function (event) {
-            if (event.persisted) { // true, wenn die Seite aus dem Cache geladen wurde
-                document.getElementById('loadingSpinner').style.display = 'none';
-            }
-        });
-    </script>
 </body>
 
 </html>
