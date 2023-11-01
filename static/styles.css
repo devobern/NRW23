@@ -128,13 +128,94 @@ li {
     background-color: #dcdcdc;
 }
 
-/* Für Bildschirme mit einer maximalen Breite von 767px (typischerweise Smartphones) */
 @media only screen and (max-width: 767px) {
     .result-item {
-        height: auto; /* Erlaubt dem Element, sich basierend auf dem Inhalt anzupassen */
+        height: auto;
     }
 
     .result-item a {
-        padding: 10px 5px; /* Reduzieren Sie das Padding ein wenig für kleine Bildschirme */
+        padding: 10px 5px;
     }
+}
+
+.dropdown-list {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-top: 5px;
+}
+
+.dropdown-list a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-list a:hover {
+    background-color: #f5f5f5;
+}
+
+.divider {
+    border-top: 1px solid #e0e0e0;  /* Light gray border on top */
+    margin: 20px 0;  /* Vertical spacing */
+}
+
+/*Tooltip style*/
+
+.header-with-tooltip {
+    display: flex; /* Makes the children (h2 and tooltip) align side by side */
+    align-items: center; /* Vertically centers the tooltip with the h2 */
+}
+
+
+.tooltip-container {
+    margin-left: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-icon {
+    background-color: #eee;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    cursor: help;
+}
+
+.tooltip-content {
+    display: none;
+    width: 300px;
+    font-size: 0.9em;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: left;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -125px;
+    pointer-events: none;
+}
+
+.tooltip-content ul {
+    margin: 0;
+    padding-left: 20px; /* Adjust based on your design preference */
+}
+
+.tooltip-content li {
+    margin-bottom: 5px; /* Adjust based on your design preference */
+}
+
+.tooltip-container:hover .tooltip-content {
+    display: block;
 }
