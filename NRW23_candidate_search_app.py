@@ -93,11 +93,11 @@ def search():
         candidates = data['level_kantone']
         
         results = [person for person in candidates if all([
-            not search_data['first_name'] or person['vorname'].lower() == search_data['first_name'],
-            not search_data['last_name'] or person['name'].lower() == search_data['last_name'],
+            not search_data['first_name'] or search_data['first_name'] in person['vorname'].lower(),
+            not search_data['last_name'] or search_data['last_name'] in person['name'].lower(),
             not search_data['kanton'] or person['kanton_bezeichnung'].lower().find(search_data['kanton']) != -1,
             not search_data['liste'] or person['liste_bezeichnung'].lower().find(search_data['liste']) != -1,
-            not search_data['wohnort'] or (person['wohnort'] and person['wohnort'].lower() == search_data['wohnort'])
+            not search_data['wohnort'] or (person['wohnort'] and search_data['wohnort'] in person['wohnort'].lower())
         ])]
         
         if results: 
