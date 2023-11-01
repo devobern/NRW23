@@ -69,12 +69,15 @@ SEARCH_FIELDS = ['first_name', 'last_name', 'kanton', 'liste', 'wohnort']
 
 DATA_CACHE = None
 
-def get_data_from_zip():
+def load_data_cache():
     global DATA_CACHE
-    if not DATA_CACHE:
-        with zipfile.ZipFile(ZIP_FILE_PATH, 'r') as z:
-            with z.open(JSON_FILENAME) as f:
-                DATA_CACHE = json.load(f)
+    with zipfile.ZipFile(ZIP_FILE_PATH, 'r') as z:
+        with z.open(JSON_FILENAME) as f:
+            DATA_CACHE = json.load(f)
+
+load_data_cache()
+
+def get_data_from_zip():
     return DATA_CACHE
 
 @app.route('/')
