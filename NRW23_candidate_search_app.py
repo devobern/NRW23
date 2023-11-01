@@ -109,7 +109,41 @@ def search():
         # Log the error for debugging purposes but do not expose to user
         print(e)
         return "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.", 500
+
     
+@app.route('/search_name', methods=['POST'])
+def search_name():
+    name = request.form.get('name', '').lower().strip()
+    print(f"name: {name}")
+    
+    try:
+        data = get_data_from_zip()
+        candidates = data['level_kantone']
+        
+        # Split the name by spaces to separate potential first and last names
+        names = name.split()
+        
+        if len(names) == 1:
+            # If only one name is provided, search both first and last names for partial matches
+            results = [person for person in candidates if name in person['vorname'].lower() or name in person['name'].lower()]
+        elif len(names) == 2:
+            # If two names are provided, assume the first is the firstname and the second is the lastname
+            first_name, last_name = names
+            results = [person for person in candidates if first_name in person['vorname'].lower() and last_name in person['name'].lower()]
+        else:
+            # If more than two names are provided, return an empty result set
+            results = []
+        
+        results.sort(key=lambda x: x['name'])
+
+        return jsonify(results)
+
+    except Exception as e:
+        # Log the error for debugging purposes but do not expose to user
+        print(e)
+        return jsonify({"error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut."}), 500
+
+
 @app.route('/detail/<kanton_nummer>/<liste_nummer_kanton>/<kandidat_nummer>')
 def detail(kanton_nummer, liste_nummer_kanton, kandidat_nummer):
     
