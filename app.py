@@ -1,4 +1,4 @@
-from flask import Flask, url_for
+from flask import Flask
 from flask_talisman import Talisman
 import logging
 from logging.handlers import RotatingFileHandler
@@ -42,6 +42,7 @@ def create_app():
         'includeSubDomains': True
     }
 
+    talisman.content_security_policy = csp
     talisman.strict_transport_security = hsts
     talisman.referrer_policy = 'strict-origin-when-cross-origin'
 
@@ -68,8 +69,6 @@ def create_app():
     app.logger.setLevel(logging.INFO)
 
     with app.app_context():
-            csp['script-src'].append(url_for('static', filename='main.js', _external=True))
-            talisman.content_security_policy = csp
             load_data_into_app_context(app)
 
     # Register the blueprint
