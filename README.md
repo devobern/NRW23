@@ -24,23 +24,30 @@ NRW23/
 │   └── NRW2023-kandidierende.zip  # Data containing candidate information
 │
 ├── static/
-│   └── styles.css            # CSS file for the web application styling
+│   ├── JS/
+│   │   └── script.js             # JavaScript file for interactive features
+│   │
+│   └── styles.css                # CSS file for the web application styling
 │
 ├── templates/
-│   ├── detail.html           # Detail page template for a specific candidate
-│   ├── index.html            # Main page template for search feature
-│   └── results.html          # Results page displaying candidates
+│   ├── detail.html               # Detail page template for a specific candidate
+│   ├── index.html                # Main page template for search feature
+│   ├── privacy-policy.html       # Privacy policy template
+│   └── results.html              # Results page displaying candidates
 │
-├── .gitignore                # Patterns of files/directories to ignore in git
+├── .gitignore                    # Patterns of files/directories to ignore in git
 │
-├── LICENSE                   # License file
+├── app.py                        # Main Flask app script
 │
-├── NRW23_candidate_search_app.py  # Main Flask app script
+├── LICENSE                       # License file
 │
-├── README.md                 # README documentation
+├── main_routes.py                # Routes for the Flask app
 │
-└── requirements.txt          # List of required Python packages for the app
-
+├── README.md                     # README documentation
+│
+├── requirements.txt              # List of required Python packages for the app
+│
+└── utils.py                      # Utility functions for the app
 ```
 
 ## Getting Started
@@ -71,11 +78,13 @@ NRW23/
 
 5. **Run the App**
    ```bash
-   python NRW23_candidate_search_app.py
+   python run.py
    ```
 
 6. **Access Locally**  
-   The application will be accessible at `http://127.0.0.1:5000/`.
+   The application will be accessible at http://127.0.0.1:5000/.
+
+   Note: Due to the Content Security Policy (CSP), the app cannot be run locally without dev certificates. To address this, you can use mkcert to generate your own certificate. For a guide on how to use mkcert, please refer to this [tutorial](https://web.dev/articles/how-to-use-local-https).
 
 ### Online Access
 Access the hosted application [here](https://devobern.pythonanywhere.com/).
