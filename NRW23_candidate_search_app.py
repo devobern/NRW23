@@ -3,6 +3,9 @@ import zipfile
 import json
 import os
 from flask_talisman import Talisman
+import logging
+from logging.handlers import RotatingFileHandler
+
 
 app = Flask(__name__)
 
@@ -61,6 +64,15 @@ talisman.expect_ct = True
     # For 'sandbox', Flask-Talisman has a separate argument. You might handle it like this:
     # talisman = Talisman(app, content_security_policy=csp, session_cookie_secure=True, force_https_permanent=True, feature_policy="microphone 'none'; geolocation 'none';", sandbox_directives=['allow-forms', 'allow-scripts'])
 
+# Setup logging
+log_formatter = logging.Formatter("[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s")
+log_handler = RotatingFileHandler("application.log", maxBytes=10000000, backupCount=5)  # Log rotation
+log_handler.setFormatter(log_formatter)
+log_handler.setLevel(logging.INFO)
+
+app.logger.addHandler(log_handler)
+app.logger.setLevel(logging.INFO)
+
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ZIP_FILE_PATH = os.path.join(BASE_DIR, 'files', 'NRW2023-kandidierende.zip')
@@ -107,14 +119,13 @@ def search():
 
     except Exception as e:
         # Log the error for debugging purposes but do not expose to user
-        print(e)
+        app.logger.error("An error occurred: %s", e)
         return "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.", 500
 
     
 @app.route('/search_name', methods=['POST'])
 def search_name():
     name = request.form.get('name', '').lower().strip()
-    print(f"name: {name}")
     
     try:
         data = get_data_from_zip()
@@ -140,7 +151,7 @@ def search_name():
 
     except Exception as e:
         # Log the error for debugging purposes but do not expose to user
-        print(e)
+        app.logger.error("An error occurred: %s", e)
         return jsonify({"error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut."}), 500
 
 
