@@ -19,23 +19,21 @@
     </div>
 
     <h1>Nationalratswahlen 2023: Kandidat:in Suche</h1>
-    <p>Gib einen oder mehrere Suchbegriffe ein, um nach Personen zu suchen, die für den Nationalrat 2023 kandidiert
-        haben. Du kannst nach Vorname, Nachname, Kanton, Partei und Wohnort suchen. Die Ergebnisse zeigen dir die Anzahl
-        der erhaltenen Stimmen sowie zusätzliche Details zur Person und ihrer Kandidatur. Bitte beachte, dass die Daten
-        nur für die Wahlen von 2023 gelten.</p>
+    <p>Die Webseite dient zur Suche von Kandidat:innen, die für die Nationalratswahlen 2023 in der Schweiz kandidiert haben. Nutzer:innen können sowohl gezielt nach einem Kandidaten mithilfe seines Vor- oder Nachnamens suchen als auch detailliertere Suchen basierend auf verschiedenen Kriterien wie Kanton, Liste und Wohnort durchführen.</p>
 
     <div class="header-with-tooltip">
-        <h2>Suche nach Kandidat </h2>
+        <h2>Suche nach Kandidat:in </h2>
         <div class="tooltip-container">
             <span class="tooltip-icon">?</span>
             <div class="tooltip-content">
                 <ul>
-                    <li>Gib den Vor- oder Nachnamen eines Kandidaten ein. Passende Kandidaten werden dir daraufhin unten
+                    <li>Gib den Vor- oder Nachnamen einer kandidierenden Person ein. Passende Kandidaten werden dir daraufhin unten
                         aufgelistet.</li>
                 </ul>
             </div>
         </div>
     </div>
+    <p>Schnelles Finden einer kandidierenden Person durch die Eingabe ihres Namens. Während der Eingabe zeigt eine Dropdown-Liste dynamisch passende Kandidat:innen an.</p>
     <input type="text" id="kandidatSearch" placeholder="Name des Kandidaten">
     <ul class="dropdown-list" id="kandidatDropdown">
         <!--Is dynamicly loaded via JavaScript-->
@@ -63,6 +61,7 @@
             </div>
         </div>
     </div>
+    <p>Suche anhand von verschiedenen Kriterien wie Vorname, Nachname, Kanton, Liste und Wohnort nach einer kandidierenden Person. Nachdem alle gewünschten Kriterien eingegeben wurden, werden die Ergebnisse durch das Betätigen des "Suchen"-Buttons präsentiert.</p>
 
     <form action="/search" method="post">
         Vorname: <input type="text" name="first_name"><br>
