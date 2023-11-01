@@ -2,8 +2,65 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for
 import zipfile
 import json
 import os
+from flask_talisman import Talisman
 
 app = Flask(__name__)
+
+# Security Headers
+talisman = Talisman(app)
+
+csp = {
+    'default-src': '\'self\'',
+    'script-src': '\'self\'',
+    'script-src-elem': '\'self\'',
+    'script-src-attr': '\'none\'',
+    'style-src': '\'self\'',
+    'style-src-elem': '\'self\'',
+    'style-src-attr': '\'none\'',
+    'img-src': [
+        '\'self\'',
+        'img.shields.io'
+        ],
+    'font-src': '\'self\'',
+    'connect-src': '\'self\'',
+    'media-src': '\'self\'',
+    'object-src': '\'self\'',
+    'prefetch-src': '\'self\'',
+    'child-src': '\'self\'',
+    'frame-src': '\'self\'',
+    'worker-src': '\'self\'',
+    'frame-ancestors': '\'self\'',
+    'form-action': '\'self\''
+}
+
+# HTTP Strict Transport Security (HSTS) Header
+hsts = {
+    'max-age': 31536000,
+    'includeSubDomains': True
+}
+
+talisman.content_security_policy = csp
+talisman.strict_transport_security = hsts
+talisman.referrer_policy = 'strict-origin-when-cross-origin'
+
+talisman.feature_policy = {
+    'geolocation': '\'none\'',
+    'autoplay': ['\'self\''],
+    'camera': '\'none\''
+}
+
+talisman.permissions_policy = {
+    'geolocation': '\'none\'',
+    'camera': '\'none\''
+}
+
+talisman.expect_ct = True
+
+
+    # 'disown-opener' is not a standard CSP directive and isn't supported directly in Flask-Talisman, so it's omitted.
+    # For 'sandbox', Flask-Talisman has a separate argument. You might handle it like this:
+    # talisman = Talisman(app, content_security_policy=csp, session_cookie_secure=True, force_https_permanent=True, feature_policy="microphone 'none'; geolocation 'none';", sandbox_directives=['allow-forms', 'allow-scripts'])
+
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ZIP_FILE_PATH = os.path.join(BASE_DIR, 'files', 'NRW2023-kandidierende.zip')
