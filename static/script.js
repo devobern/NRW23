@@ -112,4 +112,8 @@
             dropdown.removeChild(dropdown.firstChild);
         }
     }
+
+    function goBack() {
+        window.history.back();
+    }
 })();

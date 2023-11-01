@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
     <title>Details von {{ person.vorname }} {{ person.name }}</title>
 </head>
 
@@ -64,7 +65,8 @@
         </tr>
     </table>
 
-    <a href="/">Zurück zur Suche</a> | <a href="javascript:window.history.back()">Zurück zu den Ergebnissen</a>
+    <a href="/">Zurück zur Suche</a> | <a href="#" onclick="goBack(); return false;">Zurück zu den Ergebnissen</a>
+
 
     <!-- Quellenangabe -->
     <h3>Quellenangabe</h3>
