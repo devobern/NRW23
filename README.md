@@ -92,7 +92,7 @@ NRW23/
    Note: Due to the Content Security Policy (CSP), the app cannot be run locally without dev certificates. To address this, you can use mkcert to generate your own certificate. For a guide on how to use mkcert, please refer to this [tutorial](https://web.dev/articles/how-to-use-local-https).
 
 ### Online Access
-Access the hosted application [here](https://devobern.pythonanywhere.com/).
+Online access is no longer available. 
 
 ## Disclaimer
 This application is an ongoing project and serves as a bit of a playground for me. It was developed with the primary motivation to provide a simple platform to view the votes received by individual candidates. There might be occasional issues or aspects that need refinement. Feedback and suggestions are always welcome.
